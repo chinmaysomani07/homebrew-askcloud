@@ -5,11 +5,11 @@
 class CloudLens < Formula
   desc ""
   homepage "https://github.com/chinmaysomani07/askcloud"
-  version "0.6"
+  version "0.7"
 
   on_macos do
-    url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.6/askcloud_0.6_darwin_all.tar.gz"
-    sha256 "a858a957e8a1dde057e4dd14ffaa534b855fefca3f8667ae06e596ad329bbda1"
+    url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.7/askcloud_0.7_darwin_all.tar.gz"
+    sha256 "98b42b5410fa7e61b6b1c61c60e874d7989c24de04ead92335d5824b96158088"
 
     def install
       bin.install "askcloud"
@@ -17,25 +17,25 @@ class CloudLens < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.6/askcloud_0.6_linux_amd64.tar.gz"
-      sha256 "48a0bef1b24d37deb1a4b6438bbd6e3d29b79c64461bf961aae96ec4d8a513d9"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.7/askcloud_0.7_linux_arm64.tar.gz"
+      sha256 "b45e13126b2bbacaa74d4090e14cc4efb15744c32c59f82e6c3b2e7ec89af2d1"
 
       def install
         bin.install "askcloud"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.6/askcloud_0.6_linux_arm64.tar.gz"
-      sha256 "45c0ceeb7485f10bdb959b94b9029f8e35f0cc42bc896222b3464893b76b941e"
+    if Hardware::CPU.intel?
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.7/askcloud_0.7_linux_amd64.tar.gz"
+      sha256 "42ddf25c59826920a1eb5fc5e5012508d185d7af9829e1b6f7c9eb969e96bc3e"
 
       def install
         bin.install "askcloud"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.6/askcloud_0.6_linux_armv6.tar.gz"
-      sha256 "694a3e3059c30db7157476dc4378cbc5fb97e3c79a1544d022b49ec411d1239e"
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.7/askcloud_0.7_linux_armv6.tar.gz"
+      sha256 "5f0fdd04691303c9d80f4b8ff78c314b667a5b0a882061ef4664355e181def69"
 
       def install
         bin.install "askcloud"

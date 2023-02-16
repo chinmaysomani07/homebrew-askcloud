@@ -5,15 +5,41 @@
 class CloudLens < Formula
   desc ""
   homepage "https://github.com/chinmaysomani07/askcloud"
-  version "0.5"
-  depends_on :macos
+  version "0.6"
 
   on_macos do
-    url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.5/askcloud_0.5_darwin_all.tar.gz"
-    sha256 "5062ad8bb971e716ea56bc1f6ae346a36023d501d0d780cc512822af81b8c0bf"
+    url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.6/askcloud_0.6_darwin_all.tar.gz"
+    sha256 "a858a957e8a1dde057e4dd14ffaa534b855fefca3f8667ae06e596ad329bbda1"
 
     def install
       bin.install "askcloud"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.6/askcloud_0.6_linux_amd64.tar.gz"
+      sha256 "48a0bef1b24d37deb1a4b6438bbd6e3d29b79c64461bf961aae96ec4d8a513d9"
+
+      def install
+        bin.install "askcloud"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.6/askcloud_0.6_linux_arm64.tar.gz"
+      sha256 "45c0ceeb7485f10bdb959b94b9029f8e35f0cc42bc896222b3464893b76b941e"
+
+      def install
+        bin.install "askcloud"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.6/askcloud_0.6_linux_armv6.tar.gz"
+      sha256 "694a3e3059c30db7157476dc4378cbc5fb97e3c79a1544d022b49ec411d1239e"
+
+      def install
+        bin.install "askcloud"
+      end
     end
   end
 end

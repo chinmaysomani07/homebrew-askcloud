@@ -5,11 +5,11 @@
 class Askcloud < Formula
   desc ""
   homepage "https://github.com/chinmaysomani07/askcloud"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
-    url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_darwin_all.tar.gz"
-    sha256 "f28094ee47420db65b6e4d550698d649a614f3aa25a45aacb1912e9aff41bf55"
+    url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.1/askcloud_0.1.1_darwin_all.tar.gz"
+    sha256 "364f6348a2d1dfcd8e6564583eada097a7de2dfea4802acfabc9c15b80933578"
 
     def install
       bin.install "askcloud"
@@ -17,25 +17,25 @@ class Askcloud < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_linux_armv6.tar.gz"
-      sha256 "70ae45a63d46e589304a5d6020213649952bc4f625644193d4527617f51479ba"
-
-      def install
-        bin.install "askcloud"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_linux_arm64.tar.gz"
-      sha256 "faed0e8945030c53948bb19c0b7b52d801feaadc07367f6402b58ce2f907b7cc"
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.1/askcloud_0.1.1_linux_arm64.tar.gz"
+      sha256 "b174f1d054cadd3d5f9458ce9c8af2884c4546d6ab366f04bb3c6909f188a7b6"
 
       def install
         bin.install "askcloud"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_linux_amd64.tar.gz"
-      sha256 "683fefa375320497fb5b65a793ede8db9751fd538ceae3649133603d8d67ca59"
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.1/askcloud_0.1.1_linux_amd64.tar.gz"
+      sha256 "71fad975a1c0953e96c1b493ac302441a1b8bd97c7eee69ee93032e63ab5ce5b"
+
+      def install
+        bin.install "askcloud"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.1/askcloud_0.1.1_linux_armv6.tar.gz"
+      sha256 "69b52ce72c14e050c00de71d8a94ae220c72c7db4d92d7c0c9a58237933913d2"
 
       def install
         bin.install "askcloud"

@@ -9,7 +9,7 @@ class Askcloud < Formula
 
   on_macos do
     url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_darwin_all.tar.gz"
-    sha256 "2086a9b94087e18555f0565de09dd66af05f20e2c00156ea99e27bf7260439f2"
+    sha256 "9e64f22c37242586699b82a1952e947dd4c5d6471e4ef64195848c1cb16ca764"
 
     def install
       bin.install "askcloud"
@@ -17,9 +17,9 @@ class Askcloud < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_linux_arm64.tar.gz"
-      sha256 "99f48485b148f012f596697e17d6c058611f989f6bbc00a775bcb6b0f7ec04ea"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_linux_armv6.tar.gz"
+      sha256 "76f1596e2f037190b8751f3b61a5431a9303075ab99bbba1dd350d3855502b0f"
 
       def install
         bin.install "askcloud"
@@ -27,15 +27,15 @@ class Askcloud < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_linux_amd64.tar.gz"
-      sha256 "50cc0359b8b23fa526e141f2898aad439d002cc4915a0e0f3176e9c7bd50e154"
+      sha256 "8d8e2abdf17463087a413d27fd1998f9fb85a5b5828de29d6adf7c6c4fcbb987"
 
       def install
         bin.install "askcloud"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_linux_armv6.tar.gz"
-      sha256 "8d517f914462f89200fce236d4f46ab8cb216861e6df143047dfc4432ff0631b"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.0/askcloud_0.1.0_linux_arm64.tar.gz"
+      sha256 "f1c8f057e918faf46a1c9f4021cdbfc30912dd51e44f4933f8bae8a8480713ab"
 
       def install
         bin.install "askcloud"

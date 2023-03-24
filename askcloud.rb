@@ -5,11 +5,11 @@
 class Askcloud < Formula
   desc ""
   homepage "https://github.com/chinmaysomani07/askcloud"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
-    url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.1/askcloud_0.1.1_darwin_all.tar.gz"
-    sha256 "364f6348a2d1dfcd8e6564583eada097a7de2dfea4802acfabc9c15b80933578"
+    url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.2/askcloud_0.1.2_darwin_all.tar.gz"
+    sha256 "a02c34980107960f0b7e26dc3e6e79f11aec98c8cc557759e8764fa9ed7ee9f6"
 
     def install
       bin.install "askcloud"
@@ -18,24 +18,24 @@ class Askcloud < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.1/askcloud_0.1.1_linux_arm64.tar.gz"
-      sha256 "b174f1d054cadd3d5f9458ce9c8af2884c4546d6ab366f04bb3c6909f188a7b6"
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.2/askcloud_0.1.2_linux_arm64.tar.gz"
+      sha256 "71fd00ec308b131c3e0fe174530610934a4cf8009cc60917419e3e3b06fa1605"
 
       def install
         bin.install "askcloud"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.1/askcloud_0.1.1_linux_amd64.tar.gz"
-      sha256 "71fad975a1c0953e96c1b493ac302441a1b8bd97c7eee69ee93032e63ab5ce5b"
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.2/askcloud_0.1.2_linux_amd64.tar.gz"
+      sha256 "56da75d4fea70f7acca86d24260387191de47345b1bc525f29735a8339c2021c"
 
       def install
         bin.install "askcloud"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.1/askcloud_0.1.1_linux_armv6.tar.gz"
-      sha256 "69b52ce72c14e050c00de71d8a94ae220c72c7db4d92d7c0c9a58237933913d2"
+      url "https://github.com/chinmaysomani07/askcloud/releases/download/v0.1.2/askcloud_0.1.2_linux_armv6.tar.gz"
+      sha256 "615cb6de7ad30e5ce30a0c4b888b45c1af32465ebda6f2c5227d3fa6c7640bda"
 
       def install
         bin.install "askcloud"
